@@ -1,0 +1,7 @@
+.section-title{
+    @apply xs:text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold font-raleway
+}
+
+.section-text{
+    @apply xs:text-lg sm:text-lg lg:text-xl xl:text-2xl font-normal font-lato
+}

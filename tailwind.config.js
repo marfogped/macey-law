@@ -16,6 +16,7 @@ export default {
       },
       colors: {
         neutral: "#F8F8FF",
+        lightBlue: "#2898EE"
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
