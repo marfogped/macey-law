@@ -5,3 +5,20 @@
 .section-text{
     @apply xs:text-lg sm:text-lg lg:text-xl xl:text-2xl font-normal font-lato
 }
+
+.swiper {
+    width: 100%;
+    height: 60%;
+}
+  
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #EBEBEB;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
