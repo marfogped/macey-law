@@ -11,23 +11,24 @@ const Index: React.FC = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div className='h-max w-full'>
-      
-      <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between w-[50%] mx-auto my-12'>
-        <h2 className='section-title'>They <span className='text-lightBlue'>trust us.</span></h2>
-        <div className='flex items-center xs:flex-col sm:flex-col lg:flex-row'>
-          <div className='flex items-center gap-2 text-yellow-500'>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <StarHalf />
-            <div className='text-lg font-semibold text-black'>4.5</div>
+    <section className='h-max w-full bg-[#F8F8FF] py-8'>
+      <div className='section-container'>
+        <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between w-[50%] mx-auto my-12'>
+          <h2 className='section-title'>They <span className='text-lightBlue'>trust us.</span></h2>
+          <div className='flex items-center xs:flex-col sm:flex-col lg:flex-row'>
+            <div className='flex items-center gap-2 text-yellow-500'>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <StarHalf />
+              <div className='text-lg font-semibold text-black'>4.5</div>
+            </div>
+            <div className='text-lg font-semibold text-lightBlue ml-2'>+1000 reviews</div>
           </div>
-          <div className='text-lg font-semibold text-lightBlue ml-2'>+1000 reviews</div>
         </div>
-      </div>
 
+      </div>
       <Swiper
         ref={swiperRef}
         slidesPerView={2}
@@ -80,7 +81,7 @@ const Index: React.FC = () => {
         <span> {currentSlide + 1} / {TESTIMONIALS.length} </span>
         <button className="swiper-button-next"> <ChevronRight /> </button>
       </div>
-    </div>
+    </section>
   )
 }
 

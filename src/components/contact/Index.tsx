@@ -12,9 +12,9 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <section className='w-full h-screen bg-[#0F0F1C]'>
+      <section className='w-full h-max bg-[#0F0F1C] py-12'>
         <div className='section-container flex items-center'>
-          <div className='h-[70%] w-full bg-white grid lg:grid-cols-2 xs:grid-cols-1 sm:grid-cols-1'>
+          <div className='h-[70%] xs:w-[90%] sm:w-[90%] lg:w-full mx-auto bg-white grid lg:grid-cols-2 xs:grid-cols-1 sm:grid-cols-1'>
             <div className='grid grid-cols-2 p-4'>
               <div className='flex flex-col items-center justify-center font-lato'>
                 <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
@@ -63,7 +63,7 @@ const Index: React.FC = () => {
 
       </section>
       <section className='section-container'>
-        <div className="col-span-3 md:col-span-3 xs:mt-10 sm:mt-10 lg:my-36">
+        <div className="col-span-3 md:col-span-3 xs:mt-10 sm:mt-10 xs:px-10 sm:px-10 lg:px-0 lg:my-20">
           <form
             action="POST"
             // onSubmit={sendMessage}
@@ -124,12 +124,7 @@ const Index: React.FC = () => {
                 <label className="form-label">Your message</label>
               </div>
 
-              <button
-                type="submit"
-                className="mt-5 bg-black px-10 py-2 text-white col-start-6 col-span-1"
-              >
-                Send Message
-              </button>
+              <button type='submit' className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>SEND MESSAGE</button>
             </div>
           </form>
         </div>
