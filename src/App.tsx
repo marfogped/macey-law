@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="xl:w-[80%] mx-auto xs:w-full sm:w-full">
+      <main>
         <Hero />
         <AboutUs />
         <PracticeAreas />

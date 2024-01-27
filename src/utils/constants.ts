@@ -40,3 +40,21 @@ export const TESTIMONIALS = [
         description: "In my legal ordeal, Macey Law was a beacon of hope. They provided more than legal expertise; their reassurance and strategic approach were instrumental in navigating my case's complexities. I am immensely grateful for their outstanding service and support, which led to a better outcome than I expected. Their ability to simplify a challenging situation is why I highly recommend them."
     },
 ]
+
+export const FOOTER_LINKS = [
+    {
+        id: "terms-of-service",
+        label: "Terms of Service",
+        href: "terms-of-service"
+    },
+    {
+        id: "privacy-policy",
+        label: "Privacy Policy",
+        href: "privacy-policy"
+    },
+    {
+        id: "faq",
+        label: "FAQ",
+        href: "faq"
+    },
+]
