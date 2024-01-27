@@ -6,6 +6,10 @@
     @apply xs:text-lg sm:text-lg lg:text-xl xl:text-2xl font-normal font-lato
 }
 
+.section-container{
+    @apply xl:w-[80%] mx-auto xs:w-full sm:w-full h-full;
+}
+
 .swiper {
     width: 100%;
     height: 60%;

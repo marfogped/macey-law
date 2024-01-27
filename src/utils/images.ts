@@ -5,10 +5,13 @@ import MaceyLogoTransparent from "../assets/img/logo/macey-law-logo-transparent.
 import MaceyLogoWhite from "../assets/img/logo/macey-law-logo-white.webp";
 import MayaMaceyFoundation from "../assets/img/logo/maya-macey-foundation.webp";
 
+import MaceyMap from "../assets/img/resources/maps.png";
+
 export {
     HeroBackground,
     MaceyFullWhite,
     MaceyLogoTransparent,
     MaceyLogoWhite,
-    MayaMaceyFoundation
+    MayaMaceyFoundation,
+    MaceyMap
 }
