@@ -12,10 +12,10 @@ const Index = () => {
   };
 
   const changeColor = () => {
-    if (window.scrollY >= 60) {
+    const innerHeight = window.innerHeight;
+    if (window.scrollY >= innerHeight) {
       setColor(true);
-    }
-    if (window.scrollY === 0) {
+    } else if(window.scrollY <= innerHeight){
       setColor(false);
     }
   };
@@ -30,7 +30,7 @@ const Index = () => {
     <nav 
     className={`fixed top-0 w-full ${isActive ? 'h-max' : ''} z-10`}
     >
-      <div className={`xl:w-[70%] xs:w-full sm:w-full flex items-center justify-between p-4 ${color ? 'bg-neutral' : 'bg-transparent'}`}>
+      <div className={`xl:w-[80%] mx-auto xs:w-full sm:w-full flex items-center justify-between xs:p-4 sm:p-4 md:px-0 ${color ? 'xs:bg-neutral sm:bg-neutral md:bg-transparent' : 'bg-transparent'}`}>
 
         <div>
           <img 
@@ -40,11 +40,12 @@ const Index = () => {
           />
         </div>
 
-        <ul className='xs:hidden sm:hidden md:flex'>
+        <ul className='xs:hidden sm:hidden md:flex gap-4'>
           {
             NAV_ITEMS.map((label) => (
               <li 
               key={label.id}
+              className={`${color ? 'text-black/80 hover:text-black' : 'text-neutral/80 hover:text-neutral'} text-lg font-lato font-semibold cursor-pointer`}
               >
                 { label.label }
               </li>
@@ -53,9 +54,9 @@ const Index = () => {
         </ul>
       
         <div className=''>
-          <div className='xs:hidden sm:hidden md:flex'>
-            <p>+1 305-860-2562</p>
-            <button>FREE CONSULTATION</button>
+          <div className='xs:hidden sm:hidden md:flex items-center'>
+            <p className={`text-lg font-lato font-semibold pr-4 ${color ? 'text-black' : 'text-neutral'}`}>+1 305-860-2562</p>
+            <button className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>FREE CONSULTATION</button>
           </div>
 
           <div className="menu-toggle xs:flex sm:flex md:hidden">
