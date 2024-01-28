@@ -4,7 +4,7 @@
 
 .section-text{
     text-wrap: balance;
-    @apply xs:text-lg sm:text-lg lg:text-xl xl:text-2xl font-normal font-lato text-center
+    @apply xs:text-lg sm:text-lg lg:text-xl xl:text-2xl font-normal font-lato
 }
 
 .section-container{
