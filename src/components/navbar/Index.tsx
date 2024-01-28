@@ -52,6 +52,10 @@ const Index = () => {
             ))
           }
         </ul>
+
+        <div className={`xs:flex sm:flex md:hidden font-raleway font-bold text-2xl ${color ? 'text-black' : 'text-neutral'}`}>
+          MACEY LAW
+        </div>
       
         <div className=''>
           <div className='xs:hidden sm:hidden md:flex items-center'>
@@ -72,7 +76,7 @@ const Index = () => {
 
 
       </div>
-      <nav className={`${isActive ? 'visible' : 'invisible pointer-events-none'} w-full flex justify-center`}>
+      <nav className={`${isActive ? 'visible z-10' : 'invisible pointer-events-none'} w-full flex justify-center`}>
           <ul className='flex flex-col bg-neutral w-full items-center py-8'>
             {
               NAV_ITEMS.map((label) => (

@@ -114,7 +114,7 @@ const Index: React.FC = () => {
                 <label className="form-label">Phone</label>
               </div>
 
-              <div className="relative z-0 mb-4 col-span-full">
+              <div className="relative z-0 mb-4 xs:col-span-3 sm:col-span-3 md:col-span-6">
                 <textarea
                   name="message"
                   className="peer resize-none h-32 form-input"
@@ -124,8 +124,8 @@ const Index: React.FC = () => {
                 <label className="form-label">Your message</label>
               </div>
 
-              <button type='submit' className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>SEND MESSAGE</button>
             </div>
+            <button type='submit' className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>SEND MESSAGE</button>
           </form>
         </div>
       </section>
