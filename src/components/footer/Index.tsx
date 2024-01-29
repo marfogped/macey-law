@@ -11,15 +11,15 @@ const Index: React.FC = () => {
       </div>
 
       <div className='bg-[#1C3C7B] py-4 xs:px-4 sm:px-4 md:px-0'>
-        <div className='h-max flex xs:flex-col sm:flex-col lg:flex-row xs:items-start sm:items-start md:items-center justify-between section-container xs:gap-8 sm:gap-8 md:gap-4 '>
+        <div className='h-max flex xs:flex-col-reverse sm:flex-col-reverse lg:flex-row items-center justify-between section-container xs:gap-8 sm:gap-8 md:gap-4 '>
           <div className='text-neutral'>© 2024 All Rights Reserved.</div>
 
           <ul className='flex xs:flex-col sm:flex-col md:flex-row gap-4'>
-          {
+            {
               NAV_ITEMS.map((label) => (
                 <li 
                 key={label.id}
-                className={`text-neutral text-lg font-lato cursor-pointer`}
+                className={`text-neutral text-center text-lg font-lato cursor-pointer`}
                 >
                   <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
                 </li>
@@ -32,7 +32,7 @@ const Index: React.FC = () => {
               FOOTER_LINKS.map((label) => (
                 <li 
                 key={label.id}
-                className='text-neutral underline cursor-pointer'
+                className='text-neutral text-center underline cursor-pointer'
                 >
                   { label.label }
                 </li>

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation } from 'swiper/modules';
+import "./Testimonials.css"
 
 const Index: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,13 +16,15 @@ const Index: React.FC = () => {
       <div className='section-container'>
         <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between w-[50%] mx-auto my-12'>
           <h2 className='section-title text-center'>They <span className='text-lightBlue'>trust us.</span></h2>
-          <div className='flex items-center xs:flex-col sm:flex-col lg:flex-row'>
-            <div className='flex items-center gap-2 text-yellow-500'>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <StarHalf />
+          <div className='flex items-center xs:flex-col sm:flex-col xxl:flex-row'>
+            <div className='flex items-center flex-row gap-2'>
+              <div className='flex items-center gap-2'>
+                <Star className="star-filled" />
+                <Star className="star-filled" />
+                <Star className="star-filled" />
+                <Star className="star-filled" />
+                <StarHalf className="star-filled" />
+              </div>
               <div className='text-lg font-semibold text-black'>4.5</div>
             </div>
             <div className='text-lg font-semibold text-lightBlue ml-2'>+1000 reviews</div>
@@ -60,10 +63,10 @@ const Index: React.FC = () => {
           TESTIMONIALS.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
               <div className='flex flex-col p-8 relative'>
-                <Quote className='absolute -left-3 rotate-180' />
-                <Quote className='absolute -right-3 bottom-14' />
+                <Quote className='absolute xs:left-1 sm:left-1 md:-left-3 rotate-180' />
+                <Quote className='absolute xs:right-1 sm:right-1 md:-right-3 bottom-14' />
                 <div>
-                  <p className='text-2xl text-start font-lato'>{testimonial.description}</p>
+                  <p className='xs:text-md sm:text-lg xl:text-2xl text-start text-balance font-lato'>{testimonial.description}</p>
                 </div>
 
                 <div className='self-start mt-10'>

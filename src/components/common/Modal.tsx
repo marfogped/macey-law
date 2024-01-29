@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
+import useWindowDimensions from '../../utils/useWindowDimentions';
 
 interface ModalProps {
   show: boolean;
@@ -12,6 +13,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ show, onClose, children, width, height }) => {
   const [isVisible, setIsVisible] = useState(show);
   const [animation, setAnimation] = useState('slideIn');
+  const { windowWidth } = useWindowDimensions()
 
   useEffect(() => {
     if (show) {
@@ -35,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, children, width, height })
       <div 
       className="modal-content" 
       onClick={e => e.stopPropagation()}
-      style={{ width, height, animation: `${animation} .5s` }}
+      style={ windowWidth > 768 ? { width, height, animation: `${animation} .5s` } : { animation: `${animation} .5s` }}
       >
         <div className="h-full w-full overflow-y-auto">
           {children}

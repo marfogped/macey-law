@@ -32,12 +32,13 @@ const Index: React.FC = () => {
           }, 250);
         }}
         >
-        <div className='w-full h-full p-8'>
-          <header className='w-full bg-slate-100 p-4 mb-5'>
-            <h2 className='xs:text-lg sm:text-lg md:text-xl xl:text-2xl font-lato font-semibold'> {selectedArea?.label} </h2>
+        <div className='w-full h-full xs:p-2 sm:p-2 md:p-8'>
+          <header className='w-full py-4 mb-5'>
+            <h2 className='xs:text-xl sm:text-xl xl:text-2xl font-raleway font-semibold text-[rgb(24,25,26)]'> {selectedArea?.label} </h2>
+            <hr className='w-full bg-[#0F0F1C]' />
           </header>
-          <section>
-            Practice Area description...
+          <section className='w-full h-max'>
+            <p className='text-balance xs:text-lg sm:text-lg md:text-xl text-[rgb(57,58,59)] font-lato'>{selectedArea?.description}</p>
           </section>
         </div>
       </Modal>
