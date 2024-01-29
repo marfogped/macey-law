@@ -3,6 +3,8 @@ import { PracticeAreaProps } from '../../../utils/constants';
 
 type CardProps = {
     card: PracticeAreaProps;
+    setSelectedArea: (values: PracticeAreaProps) => void;
+    setInView: (values: boolean) => void;
 };
 
 type ColSpanClasses = {
@@ -25,9 +27,13 @@ type ColSpanClasses = {
     // Añadir más si es necesario
   };
 
-const Card: React.FC<CardProps> = ({ card }) => {
+const Card: React.FC<CardProps> = ({ card, setSelectedArea, setInView }) => {
     return (
         <article
+        onClick={()=>{
+          setSelectedArea(card);
+          setInView(true);
+        }}
         className={`bg-cover bg-center cursor-pointer ${colSpanClasses[card.colSpan]} ${rowSpanClasses[card.rowSpan]}`}
         style={{ backgroundImage: `url(${card.imageUrl})` }}
         >

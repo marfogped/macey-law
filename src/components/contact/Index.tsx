@@ -12,7 +12,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <section className='w-full h-max bg-[#0F0F1C] py-12'>
+      <section className='w-full h-max bg-[#0F0F1C] py-12' id='contact'>
         <div className='section-container flex items-center'>
           <div className='h-[70%] xs:w-[90%] sm:w-[90%] lg:w-full mx-auto bg-white grid lg:grid-cols-2 xs:grid-cols-1 sm:grid-cols-1'>
             <div className='grid grid-cols-2 p-4'>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NAV_ITEMS } from '../../utils/constants';
 import { MaceyLogoTransparent } from '../../utils/images';
+import { ScrollTo } from '..';
 import "./Navbar.css"
 
 const Index = () => {
@@ -47,7 +48,7 @@ const Index = () => {
               key={label.id}
               className={`${color ? 'text-black/80 hover:text-black' : 'text-neutral/80 hover:text-neutral'} text-lg font-lato font-semibold cursor-pointer`}
               >
-                { label.label }
+                <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
               </li>
             ))
           }
@@ -76,15 +77,15 @@ const Index = () => {
 
 
       </div>
-      <nav className={`${isActive ? 'visible z-10' : 'invisible pointer-events-none'} w-full flex justify-center`}>
-          <ul className='flex flex-col bg-neutral w-full items-center py-8'>
+      <nav className={`${isActive ? 'visible z-10' : 'invisible pointer-events-none -z-10'} w-full flex justify-center`}>
+          <ul className='flex flex-col bg-neutral w-full items-center py-8 scroll-smooth'>
             {
               NAV_ITEMS.map((label) => (
                 <li 
                 key={label.id}
-                className='font-lato text-lg cursor-pointer text-black/70 hover:text-black my-2'
+                className={`${color ? 'text-black/80 hover:text-black' : 'text-neutral/80 hover:text-neutral'} text-lg font-lato font-semibold cursor-pointer`}
                 >
-                  { label.label }
+                  <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
                 </li>
               ))
             }

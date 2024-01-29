@@ -1,6 +1,7 @@
 import React from 'react';
 import { MaceyFullWhite } from '../../utils/images';
 import { NAV_ITEMS, FOOTER_LINKS } from '../../utils/constants';
+import { ScrollTo } from '..';
 
 const Index: React.FC = () => {
   return (
@@ -14,13 +15,13 @@ const Index: React.FC = () => {
           <div className='text-neutral'>© 2024 All Rights Reserved.</div>
 
           <ul className='flex gap-4'>
-            {
+          {
               NAV_ITEMS.map((label) => (
                 <li 
                 key={label.id}
                 className={`text-neutral text-lg font-lato cursor-pointer`}
                 >
-                  { label.label }
+                  <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
                 </li>
               ))
             }
