@@ -1,7 +1,7 @@
 const Index = () => {
   return (
-    <section className='w-full h-max py-28 flex items-center' id='about'>
-      <div className="section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 px-4 py-16 mx-auto ">
+    <section className='w-full h-max xs:py-14 sm:py-14 md:py-28 flex items-center' id='about'>
+      <div className="section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 py-16">
 
         <div className="lg:col-span-2">
           <h2 className='section-title'>Leaders in Sophisticated and Group Litigation <span className='text-lightBlue'>Excellence</span></h2>
