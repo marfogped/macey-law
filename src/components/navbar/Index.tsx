@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NAV_ITEMS } from '../../utils/constants';
 import { MaceyLogoTransparent } from '../../utils/images';
 import { ScrollTo } from '..';
+import { Scale } from "lucide-react"
 import useWindowDimensions from '../../utils/useWindowDimentions';
 import "./Navbar.css"
 
@@ -60,7 +61,7 @@ const Index = () => {
         </ul>
 
         <div className={`xs:flex sm:flex md:hidden font-raleway font-bold text-2xl ${color ? 'text-black' : 'text-neutral'}`}>
-          MACEY LAW
+          <Scale className={`${color ? 'text-black' : 'text-neutral'} `} size={32} />
         </div>
       
         <div className=''>
