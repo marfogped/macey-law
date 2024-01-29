@@ -14,7 +14,7 @@ const Index: React.FC = () => {
   return (
     <section className='h-max w-full bg-[#F8F8FF] py-8'>
       <div className='section-container'>
-        <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between w-[50%] mx-auto my-12'>
+        <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between xs:w-full sm:w-full md:w-[50%] mx-auto xs:my-6 sm:my-6 lg:my-12'>
           <h2 className='section-title text-center'>They <span className='text-lightBlue'>trust us.</span></h2>
           <div className='flex items-center xs:flex-col sm:flex-col xxl:flex-row'>
             <div className='flex items-center flex-row gap-2'>
@@ -47,7 +47,7 @@ const Index: React.FC = () => {
         }}
         modules={[Navigation]}
         onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
-        className="py-8 xs:w-[90%] sm:w-[90%] md:w-full"
+        className="xs:py-0 sm:py-0 lg:py-8 xs:w-[90%] sm:w-[90%] md:w-full"
         breakpoints={{
           640: {
             slidesPerView: 2,

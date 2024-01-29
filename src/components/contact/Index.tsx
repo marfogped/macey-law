@@ -2,12 +2,13 @@ import React from 'react'
 import { MapPin, Phone, Mail, NotebookTabs } from 'lucide-react';
 import { MaceyMap } from '../../utils/images';
 import "./Contact.css"
+import useWindowDimensions from '../../utils/useWindowDimentions';
 // import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 // import { LatLngTuple } from 'leaflet';
 
 
 const Index: React.FC = () => {
-
+  const { windowWidth } = useWindowDimensions()
   // const position: LatLngTuple = [25.73192155260783, -80.25748545972051];
 
   return (
@@ -19,16 +20,16 @@ const Index: React.FC = () => {
             <div className='grid grid-cols-2 p-4 lg:place-items-center xs:place-content-start sm:place-content-start xs:gap-5 sm:gap-5 md:gap-6'> 
               
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(24,25,26)] p-8 rounded-full'>
-                  <NotebookTabs size={42} className='text-[rgb(24,25,26)]' />
+                <div className='border border-[rgb(24,25,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <NotebookTabs size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
                 </div>
                 <p className='font-semibold text-[rgb(24,25,26)]'>Contact Us</p>
                 <p className='text-center text-balance text-[rgb(57,58,59)]'>If you're facing legal challenges, don't hesitate to reach out to us for expert guidance and support.</p>
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <MapPin size={42} className='text-[rgb(24,25,26)]' />
+                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <MapPin size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
                 </div>
                 <p className='font-semibold text-[rgb(24,25,26)]'>Address</p>
                 <p className='text-center text-balance text-[rgb(57,58,59)]'>135 San Lorenzo Ave Penthouse 830</p>
@@ -36,16 +37,16 @@ const Index: React.FC = () => {
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <Phone size={42} className='text-[rgb(24,25,26)]' />
+                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <Phone size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
                 </div>
                 <p className='font-semibold text-[rgb(24,25,26)]'>Call Us</p>
                 <p className='text-center text-balance text-[rgb(57,58,59)]'>+1 305-860-2562</p>
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <Mail size={42} className='text-[rgb(24,25,26)]' />
+                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <Mail size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
                 </div>
                 <p className='font-semibold text-[rgb(24,25,26)]'>Email</p>
                 <p className='text-center text-balance text-[rgb(57,58,59)]'>info@company.com</p>

@@ -4,8 +4,8 @@ import { MayaMaceyFoundation } from '../../utils/images';
 const Index: React.FC = () => {
   return (
     <section className='w-full h-max' id='maya-macey-foundation'>
-      <div className='section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 py-16 mx-auto place-items-start'>
-        <div className="lg:col-span-2">
+      <div className='section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 xs:py-6 sm:py-6 lg:py-12 mx-auto place-items-start'>
+        <div className="xs:col-span-1 sm:col-span-1 lg:col-span-2">
           <h2 className='section-title'>Empowering Resilient Students through <span className='text-lightBlue'>Scholarships</span></h2>
           <img 
           src={MayaMaceyFoundation} 
