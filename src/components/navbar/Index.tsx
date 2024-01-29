@@ -83,7 +83,7 @@ const Index = () => {
               NAV_ITEMS.map((label) => (
                 <li 
                 key={label.id}
-                className={`${color ? 'text-black/80 hover:text-black' : 'text-neutral/80 hover:text-neutral'} text-lg font-lato font-semibold cursor-pointer`}
+                className={`text-black/80 hover:text-black font-lato font-semibold`}
                 >
                   <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
                 </li>

@@ -14,7 +14,7 @@ const Index: React.FC = () => {
     <section className='h-max w-full bg-[#F8F8FF] py-8'>
       <div className='section-container'>
         <div className='flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between w-[50%] mx-auto my-12'>
-          <h2 className='section-title'>They <span className='text-lightBlue'>trust us.</span></h2>
+          <h2 className='section-title text-center'>They <span className='text-lightBlue'>trust us.</span></h2>
           <div className='flex items-center xs:flex-col sm:flex-col lg:flex-row'>
             <div className='flex items-center gap-2 text-yellow-500'>
               <Star />

@@ -11,6 +11,10 @@
     @apply xl:w-[80%] mx-auto xs:w-full sm:w-full h-full;
 }
 
+.text-balance{
+  text-wrap: balance;
+}
+
 .swiper {
     width: 100%;
     height: 60%;

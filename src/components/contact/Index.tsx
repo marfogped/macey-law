@@ -15,38 +15,39 @@ const Index: React.FC = () => {
       <section className='w-full h-max bg-[#0F0F1C] py-12' id='contact'>
         <div className='section-container flex items-center'>
           <div className='h-[70%] xs:w-[90%] sm:w-[90%] lg:w-full mx-auto bg-white grid lg:grid-cols-2 xs:grid-cols-1 sm:grid-cols-1'>
-            <div className='grid grid-cols-2 p-4'>
+            <div className='grid grid-cols-2 p-4 place-items-start xs:gap-5 sm:gap-5 md:gap-6'> 
+              
               <div className='flex flex-col items-center justify-center font-lato'>
-                <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <NotebookTabs size={42} />
+                <div className='border border-[rgb(24,25,26)] p-8 rounded-full'>
+                  <NotebookTabs size={42} className='text-[rgb(24,25,26)]' />
                 </div>
-                <p className='font-semibold'>Contact Us</p>
-                <p className='text-center'>If you're facing legal challenges, don't hesitate to reach out to us for expert guidance and support.</p>
+                <p className='font-semibold text-[rgb(24,25,26)]'>Contact Us</p>
+                <p className='text-center text-balance text-[rgb(57,58,59)]'>If you're facing legal challenges, don't hesitate to reach out to us for expert guidance and support.</p>
               </div>
 
               <div className='flex flex-col items-center justify-center font-lato'>
                 <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <MapPin size={42} />
+                  <MapPin size={42} className='text-[rgb(24,25,26)]' />
                 </div>
-                <p className='font-semibold'>Address</p>
-                <p className='text-center'>135 San Lorenzo Ave Penthouse 830</p>
-                <p className='text-center'>Coral Gables, FL 33146, USA.</p>
+                <p className='font-semibold text-[rgb(24,25,26)]'>Address</p>
+                <p className='text-center text-balance text-[rgb(57,58,59)]'>135 San Lorenzo Ave Penthouse 830</p>
+                <p className='text-center text-balance text-[rgb(57,58,59)]'>Coral Gables, FL 33146, USA.</p>
               </div>
 
               <div className='flex flex-col items-center justify-center font-lato'>
                 <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <Phone size={42} />
+                  <Phone size={42} className='text-[rgb(24,25,26)]' />
                 </div>
-                <p className='font-semibold'>Call Us</p>
-                <p className='text-center'>+1 305-860-2562</p>
+                <p className='font-semibold text-[rgb(24,25,26)]'>Call Us</p>
+                <p className='text-center text-balance text-[rgb(57,58,59)]'>+1 305-860-2562</p>
               </div>
 
               <div className='flex flex-col items-center justify-center font-lato'>
                 <div className='border border-[rgb(25,26,26)] p-8 rounded-full'>
-                  <Mail size={42} />
+                  <Mail size={42} className='text-[rgb(24,25,26)]' />
                 </div>
-                <p className='font-semibold'>Email</p>
-                <p className='text-center'>info@company.com</p>
+                <p className='font-semibold text-[rgb(24,25,26)]'>Email</p>
+                <p className='text-center text-balance text-[rgb(57,58,59)]'>info@company.com</p>
               </div>
 
             </div>
@@ -125,7 +126,7 @@ const Index: React.FC = () => {
               </div>
 
             </div>
-            <button type='submit' className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>SEND MESSAGE</button>
+            <button type='submit' className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2 xs:w-full sm:w-full lg:w-auto lg:self-end'>SEND MESSAGE</button>
           </form>
         </div>
       </section>
