@@ -46,6 +46,9 @@ const Index = () => {
             NAV_ITEMS.map((label) => (
               <li 
               key={label.id}
+              onClick={()=> {
+                openNav()
+              }}
               className={`${color ? 'text-black/80 hover:text-black' : 'text-neutral/80 hover:text-neutral'} text-lg font-lato font-semibold cursor-pointer`}
               >
                 <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>
@@ -83,6 +86,9 @@ const Index = () => {
               NAV_ITEMS.map((label) => (
                 <li 
                 key={label.id}
+                onClick={()=> {
+                  openNav()
+                }}
                 className={`text-black/80 hover:text-black font-lato font-semibold`}
                 >
                   <ScrollTo id={`${label.id}`}>{ label.label }</ScrollTo>

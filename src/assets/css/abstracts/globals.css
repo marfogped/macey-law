@@ -8,7 +8,7 @@
 }
 
 .section-container{
-    @apply xl:w-[80%] mx-auto xs:w-full sm:w-full h-full;
+    @apply xs:w-[90%] sm:w-[90%] lg:w-[80%] mx-auto h-full;
 }
 
 .text-balance{

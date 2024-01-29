@@ -18,13 +18,13 @@ type ColSpanClasses = {
   const colSpanClasses: ColSpanClasses = {
     '1': 'col-span-1',
     '2': 'col-span-2',
-    // Añadir más si es necesario
   };
   
   const rowSpanClasses: RowSpanClasses = {
     '1': 'row-span-1',
     '2': 'row-span-2',
-    // Añadir más si es necesario
+    '3': 'row-span-3',
+    '4': 'row-span-4',
   };
 
 const Card: React.FC<CardProps> = ({ card, setSelectedArea, setInView }) => {
