@@ -10,19 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "leaflet": "^1.9.4",
+    "@arcgis/core": "4.28.10",
     "localforage": "1.10.0",
     "lucide-react": "0.316.0",
     "match-sorter": "6.3.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-leaflet": "^4.2.1",
     "react-router-dom": "6.21.3",
     "sort-by": "1.2.0",
-    "swiper": "^11.0.5"
+    "swiper": "11.0.5"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.8",
     "@types/react": "18.2.43",
     "@types/react-dom": "18.2.17",
     "@typescript-eslint/eslint-plugin": "6.14.0",
