@@ -15,50 +15,50 @@ const Index: React.FC = () => {
     <>
       <section className='w-full h-max bg-[#0F0F1C] py-12' id='contact'>
         <h2 className='section-title text-center text-neutral mb-8'>Find Us</h2>
-        <div className='section-container flex items-center'>
-          <div className='h-[70%] xs:w-[90%] sm:w-[90%] lg:w-full mx-auto bg-white grid lg:grid-cols-2 xs:grid-cols-1 sm:grid-cols-1'>
-            <div className='grid grid-cols-2 p-4 lg:place-items-center xs:place-content-start sm:place-content-start xs:gap-5 sm:gap-5 md:gap-6'> 
+        <div className='mx-auto h-full w-full flex items-center'>
+          <div className='h-[70%] w-full mx-auto flex items-center xs:flex-col sm:flex-col md:flex-row '>
+            <div className='grid grid-cols-2 xs:w-full sm:w-full md:w-1/2 p-4 place-items-center xs:place-content-start sm:place-content-start xs:gap-5 sm:gap-5 md:gap-6'> 
               
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(24,25,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
-                  <NotebookTabs size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
+                <div className='border border-neutral xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <NotebookTabs size={windowWidth > 768 ? 42 : 28} className='text-neutral' />
                 </div>
-                <p className='font-semibold text-[rgb(24,25,26)]'>Contact Us</p>
-                <p className='text-center text-balance text-[rgb(57,58,59)]'>If you're facing legal challenges, don't hesitate to reach out to us for expert guidance and support.</p>
+                <p className='font-semibold text-neutral'>Contact Us</p>
+                <p className='text-center text-balance text-neutral/80'>If you're facing legal challenges, don't hesitate to reach out to us for expert guidance and support.</p>
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
-                  <MapPin size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
+                <div className='border border-neutral xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <MapPin size={windowWidth > 768 ? 42 : 28} className='text-neutral' />
                 </div>
-                <p className='font-semibold text-[rgb(24,25,26)]'>Address</p>
-                <p className='text-center text-balance text-[rgb(57,58,59)]'>135 San Lorenzo Ave Penthouse 830</p>
-                <p className='text-center text-balance text-[rgb(57,58,59)]'>Coral Gables, FL 33146, USA.</p>
+                <p className='font-semibold text-neutral'>Address</p>
+                <p className='text-center text-balance text-neutral/80'>135 San Lorenzo Ave Penthouse 830</p>
+                <p className='text-center text-balance text-neutral/80'>Coral Gables, FL 33146, USA.</p>
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
-                  <Phone size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
+                <div className='border border-neutral xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <Phone size={windowWidth > 768 ? 42 : 28} className='text-neutral' />
                 </div>
-                <p className='font-semibold text-[rgb(24,25,26)]'>Call Us</p>
-                <p className='text-center text-balance text-[rgb(57,58,59)]'>+1 305-860-2562</p>
+                <p className='font-semibold text-neutral'>Call Us</p>
+                <p className='text-center text-balance text-neutral/80'>+1 305-860-2562</p>
               </div>
 
               <div className='flex flex-col items-center justify-start font-lato'>
-                <div className='border border-[rgb(25,26,26)] xs:p-4 sm:p-4 lg:p-8 rounded-full'>
-                  <Mail size={windowWidth > 768 ? 42 : 28} className='text-[rgb(24,25,26)]' />
+                <div className='border border-neutral xs:p-4 sm:p-4 lg:p-8 rounded-full'>
+                  <Mail size={windowWidth > 768 ? 42 : 28} className='text-neutral' />
                 </div>
-                <p className='font-semibold text-[rgb(24,25,26)]'>Email</p>
-                <p className='text-center text-balance text-[rgb(57,58,59)]'>info@company.com</p>
+                <p className='font-semibold text-neutral'>Email</p>
+                <p className='text-center text-balance text-neutral/80'>info@company.com</p>
               </div>
 
             </div>
 
-            <div className='w-full h-full relative'>
+            <div className='xs:w-full sm:w-full md:w-1/2 xs:h-72 sm:h-72 md:h-full relative'>
               <img 
               src={MaceyMap} 
               alt="macey location" 
-              className='object-cover h-full'
+              className='object-cover h-full w-full'
               />
             </div>
           </div>

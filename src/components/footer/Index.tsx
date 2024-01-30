@@ -10,11 +10,11 @@ const Index: React.FC = () => {
         <img src={MaceyFullWhite} alt="macey-full-logo" className='h-64 w-auto' />
       </div>
 
-      <div className='bg-[#1C3C7B] py-4 xs:px-4 sm:px-4 md:px-0'>
-        <div className='h-max flex xs:flex-col-reverse sm:flex-col-reverse lg:flex-row items-center justify-between section-container xs:gap-8 sm:gap-8 md:gap-4 '>
-          <div className='text-neutral'>© 2024 All Rights Reserved.</div>
+      <div className='bg-[#1C3C7B] md:py-4'>
+        <div className='h-max grid grid-cols-1 lg:grid-cols-3 items-center justify-between md:gap-4 '>
+          <div className='text-neutral xs:order-3 sm:order-3 lg:order-1 xs:py-2 sm:py-2 md:py-0 xs:bg-[rgb(24,25,26)] sm:bg-none text-center'>© 2024 All Rights Reserved.</div>
 
-          <ul className='flex xs:flex-col sm:flex-col md:flex-row gap-4'>
+          <ul className='flex xs:flex-col sm:flex-col md:flex-row gap-4 xs:order-1 sm:order-1 lg:order-2 xs:py-2 sm:py-2 md:py-0'>
             {
               NAV_ITEMS.map((label) => (
                 <li 
@@ -27,7 +27,7 @@ const Index: React.FC = () => {
             }
           </ul>
 
-          <ul className='flex xs:flex-col sm:flex-col md:flex-row gap-4'>
+          <ul className='flex xs:flex-col sm:flex-col md:flex-row  gap-4 xs:order-2 sm:order-2 lg:order-3 xs:py-2 sm:py-2 md:py-0 xs:bg-[#0F0F1C] sm:bg-none'>
             {
               FOOTER_LINKS.map((label) => (
                 <li 
