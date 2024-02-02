@@ -106,7 +106,7 @@ const Index: React.FC = () => {
 
             </div>
 
-            <div className='xs:w-full sm:w-full md:w-1/2 xs:h-72 sm:h-72 md:h-full relative'>
+            <div className='xs:w-full sm:w-full md:w-1/2 h-full relative'>
               <div 
               // ref={mapDiv} 
               className='w-full h-full' 

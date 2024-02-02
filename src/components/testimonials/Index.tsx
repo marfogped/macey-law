@@ -8,7 +8,7 @@ import { Navigation } from 'swiper/modules';
 import "./Testimonials.css"
 
 const Index: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
   const swiperRef = useRef(null);
 
   return (
@@ -35,6 +35,7 @@ const Index: React.FC = () => {
       <Swiper
         ref={swiperRef}
         slidesPerView={2}
+        initialSlide={currentSlide}
         centeredSlides={true}
         spaceBetween={30}
         grabCursor={true}

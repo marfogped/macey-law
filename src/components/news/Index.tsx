@@ -15,24 +15,24 @@ const Index: React.FC = () => {
 
   return (
     <section className='w-full h-max bg-[#0F0F1C] py-12'>
-      <div className='w-[70%] h-max mx-auto'>
-        <h2 className='section-title text-center text-neutral mb-8'>Legal Lens: 
-          <span className='text-lightBlue'>Macey Law on TV</span>
+      <div className='xs:w-[90%] sm:w-[90%] md:w-[70%] h-max mx-auto'>
+        <h2 className='section-title text-center text-neutral mb-8'>
+          Legal Lens: <span className='text-lightBlue'>Macey Law on TV</span>
         </h2>
         <h3 className='section-text text-center text-neutral/80'>Browse our televised features on major networks, highlighting MACEY LAW's impactful presence in the legal arena.</h3>
       </div>
-      <div className="section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 py-8 gap-5">
+      <div className="section-container grid xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 py-8 gap-5">
         {
           NEWS_ARTICLES.map((article) => (
             <article
             style={{background: `${article.bkgColor}`}}
             className={`w-full h-96 overflow-hidden flex items-center justify-center px-4 relative`}
             key={article.id}
+            onClick={() => toggleDetails(article.id)}
             >
               <div
               style={{background: `${article.btnColor}`}} 
               className='absolute top-2 right-2 rounded-full p-1 cursor-pointer'
-              onClick={() => toggleDetails(article.id)}
               >
                 {
                   openDetails[article.id] ? (
@@ -43,14 +43,14 @@ const Index: React.FC = () => {
                 }
               </div>
 
-              <div className={`absolute flex flex-col top-12 h-[21rem] w-full bg-neutral px-2 py-1 shadow-md transition-transform duration-500 ${openDetails[article.id] ? 'translate-y-0' : 'translate-y-full'}`}>
+              <div className={`absolute flex flex-col top-12 h-[21rem] w-full bg-neutral px-3 py-1.5 transition-transform card-shadow duration-500 ${openDetails[article.id] ? 'translate-y-0' : 'translate-y-full'}`}>
                 <div className="flex flex-col flex-grow">
-                  <div>
+                  <div className='mb-2'>
                     <h4 className='text-pretty font-semibold text-lg font-raleway'>{article.title}</h4>
-                    <hr className='w-full' />
+                    <hr className='w-full bg-[#0F0F1C] h-[2px]' />
                   </div>
                   <div className="flex-grow">
-                    <p className='text-balance xs:text-md sm:text-md md:text-sm font-lato font-light'>{article.description}</p>
+                    <p className='text-balance xs:text-md sm:text-md md:text-sm font-lato font-light text-black/80'>{article.description}</p>
                   </div>
                 </div>
                 <div className='mt-auto'>

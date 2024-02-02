@@ -166,7 +166,7 @@ export const NEWS_ARTICLES : NewsProps[] = [
         id: 5,
         title: "SkyNews",
         description: "SkyNews welcomed MACEY LAW to discuss Antitrust Violations, where they expertly navigated through the intricacies of corporate law and its global impact.",
-        href: "",
+        href: "https://news.sky.com/",
         iconColor: "Dark",
         btnColor: "#fff",
         image: "https://logos-world.net/wp-content/uploads/2023/04/Sky-News-Logo-2005.png",
