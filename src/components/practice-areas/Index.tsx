@@ -9,7 +9,7 @@ const Index: React.FC = () => {
   return (
     <section className='w-full h-max bg-[#0F0F1C] py-12' id='practice-areas'>
       <div className='section-container flex flex-col items-center gap-6'>
-        <header className='h-max xs:w-[90%] sm:w-[90%] md:w-full mx-auto bg-neutral/10 py-4 flex flex-col items-center justify-center'>
+        <header className='h-max xs:w-[90%] sm:w-[90%] md:w-full mx-auto py-4 flex flex-col items-center justify-center'>
           <h2 className='section-title text-neutral text-center'>Leading the Way in Advanced and Group Litigation</h2>
           <p className='section-text text-neutral/80 pt-4'>View our Practice Areas</p>
         </header>

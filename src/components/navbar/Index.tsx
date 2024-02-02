@@ -66,7 +66,7 @@ const Index = () => {
         <div className=''>
           <div className='xs:hidden sm:hidden md:flex items-center'>
             <p className={`text-lg font-lato font-semibold pr-4 ${color ? 'text-black' : 'text-neutral'}`}>+1 305-860-2562</p>
-            <button className='text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>FREE CONSULTATION</button>
+            <button className='text-neutral md:text-sm xl:text-md xxl:text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2'>FREE CONSULTATION</button>
           </div>
 
           <div className="menu-toggle xs:flex sm:flex md:hidden">
