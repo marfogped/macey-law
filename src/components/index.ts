@@ -6,5 +6,6 @@ export { default as MayaMaceyFoundation } from "./maya-macey-foundation/Index";
 export { default as Navbar } from "./navbar/Index";
 export { default as PracticeAreas } from "./practice-areas/Index";
 export { default as Testimonials } from "./testimonials/Index";
-export { default  as Modal } from "./common/Modal";
+export { default as News } from "./news/Index";
+export { default as Modal } from "./common/Modal";
 export { default as ScrollTo } from "./common/ScrollTo";

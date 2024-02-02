@@ -109,3 +109,67 @@ export const FOOTER_LINKS = [
         href: "faq"
     },
 ]
+
+export interface NewsProps{
+    id: number,
+    title: string,
+    description: string,
+    href?: string
+    image: string,
+    bkgColor: string,
+    btnColor: string,
+    iconColor: "Light" | "Dark",
+}
+
+export const NEWS_ARTICLES : NewsProps[] = [
+    {
+        id: 1,
+        title: "ABC",
+        description: "MACEY LAW took center stage on ABC News, demystifying legal jargon and outlining DUI/DWI penalties, providing clarity and expert insights into complex legal matters.",
+        href: "",
+        iconColor: "Dark",
+        btnColor: "#fff",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/American_Broadcasting_Company_Logo.svg/2044px-American_Broadcasting_Company_Logo.svg.png",
+        bkgColor: "#000"
+    },
+    {
+        id: 3,
+        title: "CNN",
+        description: "On CNN, MACEY LAW provided in-depth commentary on Money Laundering, breaking down the complexities of financial crimes and their legal implications.",
+        href: "",
+        iconColor: "Light",
+        btnColor: "#000",
+        image: "https://1000marcas.net/wp-content/uploads/2020/03/logo-CNN.png",
+        bkgColor: "#fff"
+    },
+    {
+        id: 2,
+        title: "Fox News",
+        description: "MACEY LAW appeared on Fox News, offering expert analysis on International Crimes, shedding light on global legal intricacies and enforcement challenges.",
+        href: "",
+        iconColor: "Light",
+        btnColor: "#DC0100",
+        image: "https://brandlogos.net/wp-content/uploads/2021/04/fox-news-logo.png",
+        bkgColor: "#003366"
+    },
+    {
+        id: 4,
+        title: "NBC",
+        description: "MACEY LAW was featured on NBC, discussing the nuances of Drug Trafficking laws, and offering their seasoned perspective on this critical legal issue.",
+        href: "",
+        iconColor: "Light",
+        btnColor: "#05AC3F",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NBC_logo.svg/567px-NBC_logo.svg.png",
+        bkgColor: "#fff"
+    },
+    {
+        id: 5,
+        title: "SkyNews",
+        description: "SkyNews welcomed MACEY LAW to discuss Antitrust Violations, where they expertly navigated through the intricacies of corporate law and its global impact.",
+        href: "",
+        iconColor: "Dark",
+        btnColor: "#fff",
+        image: "https://logos-world.net/wp-content/uploads/2023/04/Sky-News-Logo-2005.png",
+        bkgColor: "#E50009"
+    },
+]

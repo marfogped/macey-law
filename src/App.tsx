@@ -6,7 +6,8 @@ import {
   Testimonials,
   MayaMaceyFoundation,
   Contact,
-  Footer
+  Footer,
+  News
 } from "./components";
 
 
@@ -21,6 +22,7 @@ function App() {
         <PracticeAreas />
         <Testimonials />
         <MayaMaceyFoundation />
+        <News />
         <Contact />
         <Footer />
       </main>
