@@ -1,15 +1,67 @@
-import React from 'react'
+import React, { 
+  // useEffect, 
+  // useRef 
+} from 'react';
+// import Map from "@arcgis/core/Map";
+// import MapView from "@arcgis/core/views/MapView";
+// import Graphic from "@arcgis/core/Graphic";
+// import Point from "@arcgis/core/geometry/Point";
+// import esriConfig from "@arcgis/core/config";
+import "@arcgis/core/assets/esri/themes/light/main.css";
+import useWindowDimensions from '../../utils/useWindowDimentions';
 import { MapPin, Phone, Mail, NotebookTabs } from 'lucide-react';
 import { MaceyMap } from '../../utils/images';
 import "./Contact.css"
-import useWindowDimensions from '../../utils/useWindowDimentions';
-// import { MapContainer, TileLayer, Marker } from 'react-leaflet';
-// import { LatLngTuple } from 'leaflet';
-
 
 const Index: React.FC = () => {
-  const { windowWidth } = useWindowDimensions()
-  // const position: LatLngTuple = [25.73192155260783, -80.25748545972051];
+  const { windowWidth } = useWindowDimensions();
+  // const mapDiv = useRef(null);
+  
+  // useEffect(() => {
+  //   const position = [25.731, -80.257];
+  //   const apiKey = import.meta.env.VITE_ARCGIS_API_KEY;
+  //   esriConfig.apiKey = apiKey;
+
+  //   if(mapDiv && mapDiv.current){
+
+  //     const map = new Map({
+  //       basemap: "arcgis/navigation", 
+  //     });
+  
+  //     const view = new MapView({
+  //       container: mapDiv.current,
+  //       map: map,
+  //       center: position,
+  //       zoom: 17 
+  //     });
+  
+      
+  //     const point = new Point({
+  //       longitude: position[1],
+  //       latitude: position[0]
+  //     });
+  
+      
+  //     const simpleMarkerSymbol = {
+  //       type: "simple-marker",
+  //       color: [226, 119, 40], 
+  //       outline: {
+  //         color: [255, 255, 255], 
+  //         width: 1
+  //       }
+  //     };
+  
+      
+  //     const pointGraphic = new Graphic({
+  //       geometry: point,
+  //       symbol: simpleMarkerSymbol
+  //     });
+  
+      
+  //     view.graphics.add(pointGraphic);
+  //   }
+
+  // }, []);
 
   return (
     <>
@@ -55,6 +107,10 @@ const Index: React.FC = () => {
             </div>
 
             <div className='xs:w-full sm:w-full md:w-1/2 xs:h-72 sm:h-72 md:h-full relative'>
+              <div 
+              // ref={mapDiv} 
+              className='w-full h-full' 
+              />
               <img 
               src={MaceyMap} 
               alt="macey location" 
