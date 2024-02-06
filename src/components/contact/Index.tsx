@@ -1,72 +1,18 @@
-import React, { 
-  // useEffect, 
-  // useRef 
-} from 'react';
-// import Map from "@arcgis/core/Map";
-// import MapView from "@arcgis/core/views/MapView";
-// import Graphic from "@arcgis/core/Graphic";
-// import Point from "@arcgis/core/geometry/Point";
-// import esriConfig from "@arcgis/core/config";
+import React from 'react';
 import "@arcgis/core/assets/esri/themes/light/main.css";
 import useWindowDimensions from '../../utils/useWindowDimentions';
 import { MapPin, Phone, Mail, NotebookTabs } from 'lucide-react';
-import { MaceyMap } from '../../utils/images';
+import MapComponent from './components/MapComponent';
 import "./Contact.css"
 
 const Index: React.FC = () => {
   const { windowWidth } = useWindowDimensions();
-  // const mapDiv = useRef(null);
-  
-  // useEffect(() => {
-  //   const position = [25.731, -80.257];
-  //   const apiKey = import.meta.env.VITE_ARCGIS_API_KEY;
-  //   esriConfig.apiKey = apiKey;
-
-  //   if(mapDiv && mapDiv.current){
-
-  //     const map = new Map({
-  //       basemap: "arcgis/navigation", 
-  //     });
-  
-  //     const view = new MapView({
-  //       container: mapDiv.current,
-  //       map: map,
-  //       center: position,
-  //       zoom: 17 
-  //     });
-  
-      
-  //     const point = new Point({
-  //       longitude: position[1],
-  //       latitude: position[0]
-  //     });
-  
-      
-  //     const simpleMarkerSymbol = {
-  //       type: "simple-marker",
-  //       color: [226, 119, 40], 
-  //       outline: {
-  //         color: [255, 255, 255], 
-  //         width: 1
-  //       }
-  //     };
-  
-      
-  //     const pointGraphic = new Graphic({
-  //       geometry: point,
-  //       symbol: simpleMarkerSymbol
-  //     });
-  
-      
-  //     view.graphics.add(pointGraphic);
-  //   }
-
-  // }, []);
+  const position: [number, number] = [25.73189749143951, -80.25745936138712];
 
   return (
     <>
       <section className='w-full h-max bg-[#0F0F1C] py-12' id='contact'>
-        <h2 className='section-title text-center text-neutral mb-8'>Find Us</h2>
+        <h2 className='section-title text-center text-neutral mb-20'>Find Us</h2>
         <div className='mx-auto h-full w-full flex items-center'>
           <div className='h-[70%] w-full mx-auto flex items-center xs:flex-col sm:flex-col md:flex-row '>
             <div className='grid grid-cols-2 xs:w-full sm:w-full md:w-1/2 p-4 place-items-center xs:place-content-start sm:place-content-start xs:gap-5 sm:gap-5 md:gap-6'> 
@@ -107,15 +53,7 @@ const Index: React.FC = () => {
             </div>
 
             <div className='xs:w-full sm:w-full md:w-1/2 h-full relative'>
-              <div 
-              // ref={mapDiv} 
-              className='w-full h-full' 
-              />
-              <img 
-              src={MaceyMap} 
-              alt="macey location" 
-              className='object-cover h-full w-full'
-              />
+              <MapComponent position={position} />
             </div>
           </div>
         </div>
