@@ -1,13 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import useWindowDimensions from "../../utils/useWindowDimentions";
-import { MapPin, Phone, Mail, NotebookTabs } from "lucide-react";
+import { MapPin, Phone, Mail, NotebookTabs, CheckCircle, XCircleIcon } from "lucide-react";
 import MapComponent from "./components/MapComponent";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const Index: React.FC = () => {
-  const { windowWidth } = useWindowDimensions();
   const position: [number, number] = [25.73189749143951, -80.25745936138712];
+  const [errors, setErrors] = useState({
+    firstName: '',
+    email: '',
+    phone: '',
+    message: '',
+    lastName: ''
+  });
+  const [showResponse, setShowResponse] = useState({ response: '', text: '', show: false})
+  const { windowWidth } = useWindowDimensions();
 
+  const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget; 
+    const localErrors = { firstName: '', email: '', phone: '', message: '', lastName: '' };
+
+    const firstName = formData.get('firstName')?.toString().trim() || '';
+    const lastName = formData.get('lastName')?.toString().trim() || '';
+    const email = formData.get('email')?.toString().trim() || '';
+    const phone = formData.get('phone')?.toString().trim() || '';
+    const message = formData.get('message')?.toString().trim() || '';
+
+    let formIsValid = true;
+    if (!firstName) {
+        localErrors.firstName = "Please enter your first name.";
+        formIsValid = false;
+    }
+    if (!lastName) {
+        localErrors.lastName = "Please enter your last name.";
+        formIsValid = false;
+    }
+    if (!email) {
+        localErrors.email = "Please enter your email";
+        formIsValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        localErrors.email = "Your email is invalid.";
+        formIsValid = false;
+    }
+    if (!phone) {
+        localErrors.phone = "Please enter your number phone.";
+        formIsValid = false;
+    }
+    if (!message) {
+        localErrors.message = "Please enter your message.";
+        formIsValid = false;
+    }
+
+    setErrors(localErrors);
+
+    if (formIsValid) {
+        setErrors({ firstName: '', email: '', phone: '', message: '', lastName: '' });
+        
+        const form = document.createElement("form");
+        const emailMessage = `
+        Name: ${firstName}
+        LastName: ${lastName}
+        Email: ${email}
+        Phone: ${phone}
+        Message: ${message}
+        `;
+
+        form.innerHTML = `
+        <input type="hidden" name="from_name" value="${firstName}">
+        <input type="hidden" name="from_email" value="${email}">
+        <input type="hidden" name="message_html" value="${emailMessage}">
+        `;
+      
+        emailjs
+        .sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => { 
+            setShowResponse({ response: 'success', text: "Email Sent Successfully", show: true})
+            formElement.reset();
+            setTimeout(() => {
+                setShowResponse({ response: '', text: '', show: false})
+            }, 15000);
+          },
+          (error) => {
+            console.log(error.text);
+            setShowResponse({ response: 'error', text: "We had a problem sending your message.", show: false})
+          }
+        );
+    }
+};
   return (
     <>
       <section className="w-full h-max bg-[#0F0F1C] py-12" id="contact">
@@ -68,9 +156,11 @@ const Index: React.FC = () => {
                   />
                 </div>
                 <p className="font-semibold text-neutral">Email</p>
-                <p className="text-center text-balance text-neutral/80">
-                  info@company.com
-                </p>
+                <a href="mailto:dm@davidmacey.com">
+                  <p className="text-center underline text-balance text-neutral/80">
+                    dm@davidmacey.com
+                  </p>
+                </a>
               </div>
             </div>
 
@@ -90,7 +180,7 @@ const Index: React.FC = () => {
           </h3>
           <form
             action="POST"
-            // onSubmit={sendMessage}
+            onSubmit={sendMessage}
             className="flex flex-col items-center gap-6 w-full"
           >
             <div className="grid gap-6 sm:grid-cols-6 w-full">
@@ -103,6 +193,7 @@ const Index: React.FC = () => {
                   aria-label="First Name"
                 />
                 <label className="form-label">First name</label>
+                {errors.firstName && <span className='text-red-500 text-md'>{errors.firstName}</span>}
               </div>
 
               <div className="relative z-0 mb-4 col-span-3">
@@ -114,17 +205,19 @@ const Index: React.FC = () => {
                   aria-label="Last Name"
                 />
                 <label className="form-label">Last name</label>
+                {errors.lastName && <span className='text-red-500 text-md'>{errors.lastName}</span>}
               </div>
 
               <div className="relative z-0 mb-4 col-span-3">
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   className="peer form-input"
                   placeholder=" "
                   aria-label="Email"
                 />
                 <label className="form-label">Email</label>
+                {errors.email && <span className='text-red-500 text-md'>{errors.email}</span>}
               </div>
 
               <div className="relative z-0 mb-4 col-span-3">
@@ -136,6 +229,7 @@ const Index: React.FC = () => {
                   aria-label="Phone"
                 />
                 <label className="form-label">Phone</label>
+                {errors.phone && <span className='text-red-500 text-md'>{errors.phone}</span>}
               </div>
 
               <div className="relative z-0 mb-4 xs:col-span-3 sm:col-span-3 md:col-span-6">
@@ -146,14 +240,32 @@ const Index: React.FC = () => {
                   aria-label="Your Message"
                 ></textarea>
                 <label className="form-label">Your message</label>
+                {errors.message && <span className='text-red-500 text-md'>{errors.message}</span>}
               </div>
             </div>
-            <button
-              type="submit"
-              className="text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2 xs:w-full sm:w-full lg:w-auto lg:self-end"
-            >
-              SEND MESSAGE
-            </button>
+
+            <div className='w-full flex flex-col items-end justify-start'>
+              {
+                  showResponse.show ? (
+                      <div className='flex items-center gap-2'>
+                          {
+                              showResponse.response === "success" ? (
+                                  <CheckCircle className='text-green-600' size={24} />
+                              ) : (
+                                  <XCircleIcon className='text-green-600' size={24} />
+                              )
+                          }
+                          { showResponse.text }
+                      </div>
+                  ) : ("")
+              }
+              <button
+                type="submit"
+                className="text-neutral text-lg font-lato font-semibold bg-[#1C3C7B] px-4 py-2 xs:w-full sm:w-full lg:w-auto lg:self-end"
+              >
+                SEND MESSAGE
+              </button>
+            </div>
           </form>
         </div>
       </section>
