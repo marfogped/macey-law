@@ -1,5 +1,4 @@
 import React from 'react';
-import "@arcgis/core/assets/esri/themes/light/main.css";
 import useWindowDimensions from '../../utils/useWindowDimentions';
 import { MapPin, Phone, Mail, NotebookTabs } from 'lucide-react';
 import MapComponent from './components/MapComponent';
