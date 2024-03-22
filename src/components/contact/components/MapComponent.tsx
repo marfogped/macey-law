@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+import React, { useEffect, useRef } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 interface MapProps {
   position: [number, number];
@@ -11,13 +11,13 @@ const MapComponent: React.FC<MapProps> = ({ position }) => {
 
   useEffect(() => {
     if (mapRef.current === null) {
-      mapRef.current = L.map('map', {
+      mapRef.current = L.map("map", {
         center: position,
-        zoom: 13
+        zoom: 15,
       });
-    
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
       }).addTo(mapRef.current);
 
       L.marker(position).addTo(mapRef.current);
@@ -27,7 +27,9 @@ const MapComponent: React.FC<MapProps> = ({ position }) => {
     }
   }, [position]);
 
-  return <div id="map" style={{ height: '500px', width: '100%', zIndex: "5" }}></div>;
+  return (
+    <div id="map" style={{ height: "500px", width: "100%", zIndex: "5" }}></div>
+  );
 };
 
 export default MapComponent;
