@@ -9,3 +9,4 @@ export { default as Testimonials } from "./testimonials/Index";
 export { default as News } from "./news/Index";
 export { default as Modal } from "./common/Modal";
 export { default as ScrollTo } from "./common/ScrollTo";
+export { default as NotFound } from "./errors/NotFound";
