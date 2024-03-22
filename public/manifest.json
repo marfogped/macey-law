@@ -1,17 +1,17 @@
 {
-  "name": "Macey Law",
-  "short_name": "Macey Law",
-  "description": "Macey Law is a premier international law firm, dedicated to defending individuals charged with or under investigation for the commission of state or federal crimes.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#00559F",
-  "icons": [
-      {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any"
-      }
-  ]
+    "name": "Macey Law - Law Firm",
+    "short_name": "Macey Law",
+    "description": "Macey Law is a premier international law firm, dedicated to defending individuals charged with or under investigation for the commission of state or federal crimes.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#00559F",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
 }
