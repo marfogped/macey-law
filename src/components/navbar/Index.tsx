@@ -36,10 +36,12 @@ const Index = () => {
       }`}
     >
       <nav
-        className={`xl:w-[80%] mx-auto xs:w-full sm:w-full flex items-center justify-between xs:p-4 sm:p-4 md:px-0 ${
+        className={`xl:w-[80%] mx-auto xs:w-full sm:w-full flex items-center justify-between p-4 transition-all ${
           color
             ? "xs:bg-neutral sm:bg-neutral md:bg-transparent"
-            : "bg-transparent"
+            : `bg-transparent ${
+                isActive ? "xs:bg-neutral sm:bg-neutral md:bg-transparent" : ""
+              }`
         }`}
       >
         <div>
@@ -71,9 +73,7 @@ const Index = () => {
         </ul>
 
         <div
-          className={`xs:flex sm:flex md:hidden font-raleway font-bold text-2xl ${
-            color ? "text-black" : "text-neutral"
-          }`}
+          className={`xs:flex sm:flex md:hidden font-raleway font-bold text-2xl mix-blend-difference text-neutral`}
         >
           MACEY LAW
         </div>
@@ -100,34 +100,36 @@ const Index = () => {
               id="menu-toggle-btn"
               className={isActive ? "active" : ""}
             >
-              <span className={color ? "black" : "white"}></span>
+              <span
+                className={color ? `black` : `${isActive ? "black" : "white"}`}
+              ></span>
             </div>
           </div>
         </div>
       </nav>
-      {windowWidth < 768 && isActive ? (
-        <nav
-          className={`${
-            isActive ? "visible" : "invisible pointer-events-none"
-          } w-full flex justify-center`}
-        >
-          <ul className="flex flex-col bg-neutral w-full items-center py-8 scroll-smooth">
-            {NAV_ITEMS.map((label) => (
-              <li
-                key={label.id}
-                onClick={() => {
-                  openNav();
-                }}
-                className={`text-black/80 hover:text-black font-lato font-semibold`}
-              >
-                <ScrollTo id={`${label.id}`}>{label.label}</ScrollTo>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ) : (
-        ""
-      )}
+      <nav
+        className={`${
+          isActive && windowWidth < 768
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none invisible"
+        } ${
+          windowWidth > 768 && "hidden"
+        } w-full flex justify-center transition-all`}
+      >
+        <ul className="flex flex-col gap-2 bg-neutral w-full items-center py-8 scroll-smooth">
+          {NAV_ITEMS.map((label) => (
+            <li
+              key={label.id}
+              onClick={() => {
+                openNav();
+              }}
+              className={`text-black/80 hover:text-black font-lato font-semibold text-2xl`}
+            >
+              <ScrollTo id={`${label.id}`}>{label.label}</ScrollTo>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 };
