@@ -8,6 +8,7 @@ import {
   CheckCircle,
   XCircleIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import MapComponent from "./components/MapComponent";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
@@ -130,9 +131,15 @@ const Index: React.FC = () => {
   return (
     <>
       <section className="w-full h-max bg-[#0F0F1C] py-12" id="contact">
-        <h2 className="section-title text-center text-neutral mb-20">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="section-title text-center text-neutral mb-20"
+        >
           Find Us
-        </h2>
+        </motion.h2>
         <div className="mx-auto h-full w-full flex items-center">
           <div className="h-[70%] w-full mx-auto flex items-center xs:flex-col sm:flex-col md:flex-row ">
             <div className="grid grid-cols-2 xs:w-full sm:w-full md:w-1/2 p-4 place-items-center xs:place-content-start sm:place-content-start xs:gap-5 sm:gap-5 md:gap-6">
@@ -203,12 +210,24 @@ const Index: React.FC = () => {
       </section>
       <section className="section-container">
         <div className="flex flex-col items-center xs:mt-10 sm:mt-10 xs:px-10 sm:px-10 lg:px-0 lg:my-20">
-          <h2 className="section-title text-center text-[rgb(24,25,26)] ">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-title text-center text-[rgb(24,25,26)] "
+          >
             Fill the form below
-          </h2>
-          <h3 className="section-text text-center text-[rgb(57,58,59)] mb-8">
+          </motion.h2>
+          <motion.h3
+            initial={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-text text-center text-[rgb(57,58,59)] mb-8"
+          >
             And we'll respond promptly
-          </h3>
+          </motion.h3>
           <form
             action="POST"
             onSubmit={sendMessage}

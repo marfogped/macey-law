@@ -1,11 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { MayaMaceyFoundation } from "../../utils/images";
 
 const Index: React.FC = () => {
   return (
     <section className="w-full h-max" id="maya-macey-foundation">
       <div className="section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 xs:py-6 sm:py-6 lg:py-12 mx-auto gap-5 place-items-start">
-        <div className="xs:col-span-1 sm:col-span-1 lg:col-span-2">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="xs:col-span-1 sm:col-span-1 lg:col-span-2"
+        >
           <h2 className="section-title">
             Empowering Resilient Students through{" "}
             <span className="text-lightBlue">Scholarships</span>
@@ -15,9 +22,15 @@ const Index: React.FC = () => {
             alt="maya-macey-foundation"
             className="h-72 w-auto mt-10"
           />
-        </div>
+        </motion.div>
 
-        <div className="xs:mt-10 flex flex-col sm:mt-10 lg:mt-0 lg:col-span-3">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="xs:mt-10 flex flex-col sm:mt-10 lg:mt-0 lg:col-span-3"
+        >
           <p className="section-text mb-6 text-balance">
             The Maya Macey Foundation is a not for profit organization dedicated
             to providing scholarships for students who have overcome adversity
@@ -46,7 +59,7 @@ const Index: React.FC = () => {
           >
             Learn More About Maya Macey Foundation
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

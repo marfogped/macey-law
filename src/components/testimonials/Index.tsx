@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { TESTIMONIALS } from "../../utils/constants";
 import { Quote, ChevronLeft, ChevronRight, Star, StarHalf } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
@@ -14,7 +15,13 @@ const Index: React.FC = () => {
   return (
     <section className="h-max w-full bg-[#F8F8FF] py-8">
       <div className="section-container">
-        <div className="flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between xs:w-full sm:w-full md:w-[50%] mx-auto xs:my-6 sm:my-6 lg:my-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between xs:w-full sm:w-full md:w-[50%] mx-auto xs:my-6 sm:my-6 lg:my-12"
+        >
           <h2 className="section-title text-center">
             They <span className="text-lightBlue">trust us.</span>
           </h2>
@@ -33,7 +40,7 @@ const Index: React.FC = () => {
               +1000 reviews
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Swiper
         ref={swiperRef}

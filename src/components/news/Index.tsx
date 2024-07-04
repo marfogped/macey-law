@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { NEWS_ARTICLES } from "../../utils/constants";
 import { Plus, ExternalLink } from "lucide-react";
 
@@ -15,7 +16,13 @@ const Index: React.FC = () => {
 
   return (
     <section className="w-full h-max bg-[#0F0F1C] py-12">
-      <div className="xs:w-[90%] sm:w-[90%] md:w-[70%] h-max mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="xs:w-[90%] sm:w-[90%] md:w-[70%] h-max mx-auto"
+      >
         <h2 className="section-title text-center text-neutral mb-8">
           Legal Lens: <span className="text-lightBlue">Macey Law on TV</span>
         </h2>
@@ -23,10 +30,14 @@ const Index: React.FC = () => {
           Browse our televised features on major networks, highlighting MACEY
           LAW's impactful presence in the legal arena.
         </h3>
-      </div>
+      </motion.div>
       <div className="section-container grid xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 py-8 gap-5">
-        {NEWS_ARTICLES.map((article) => (
-          <article
+        {NEWS_ARTICLES.map((article, articleIdx) => (
+          <motion.article
+            initial={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, delay: articleIdx * 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             style={{ background: `${article.bkgColor}` }}
             className={`w-full h-96 overflow-hidden flex items-center justify-center px-4 relative`}
             key={article.id}
@@ -96,7 +107,7 @@ const Index: React.FC = () => {
               alt={article.title}
               className="w-full h-auto"
             />
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
