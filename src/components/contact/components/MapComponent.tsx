@@ -9,6 +9,12 @@ interface MapProps {
 const MapComponent: React.FC<MapProps> = ({ position }) => {
   const mapRef = useRef<L.Map | null>(null);
 
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: "/marker-icon-2x.png",
+    iconUrl: "/marker-icon.png",
+    shadowUrl: "/marker-shadow.png",
+  });
+
   useEffect(() => {
     if (mapRef.current === null) {
       mapRef.current = L.map("map", {

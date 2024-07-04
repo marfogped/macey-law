@@ -30,12 +30,12 @@ const Index = () => {
   }, []);
 
   return (
-    <nav
+    <header
       className={`fixed top-0 w-full ${isActive ? "h-max" : ""} z-10 ${
         color ? "xs:bg-none sm:bg-none md:bg-neutral" : "bg-transparent"
       }`}
     >
-      <div
+      <nav
         className={`xl:w-[80%] mx-auto xs:w-full sm:w-full flex items-center justify-between xs:p-4 sm:p-4 md:px-0 ${
           color
             ? "xs:bg-neutral sm:bg-neutral md:bg-transparent"
@@ -43,7 +43,13 @@ const Index = () => {
         }`}
       >
         <div>
-          <img src={MaceyLogoTransparent} alt="macey-logo" className="h-14" />
+          <ScrollTo id="hero">
+            <img
+              src={MaceyLogoTransparent}
+              alt="macey-logo"
+              className="h-14 aspect-square"
+            />
+          </ScrollTo>
         </div>
 
         <ul className="xs:hidden sm:hidden md:flex gap-4">
@@ -98,7 +104,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       {windowWidth < 768 && isActive ? (
         <nav
           className={`${
@@ -122,7 +128,7 @@ const Index = () => {
       ) : (
         ""
       )}
-    </nav>
+    </header>
   );
 };
 

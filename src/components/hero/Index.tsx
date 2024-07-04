@@ -2,7 +2,7 @@ import { HeroBackground } from "../../utils/images";
 
 const Index = () => {
   return (
-    <header className="h-screen relative w-full flex flex-col justify-center overflow-hidden">
+    <header id="hero" className="h-screen relative w-full flex flex-col justify-center overflow-hidden">
       <div className="z-[1] xs:pl-4 sm:pl-4 lg:pl-0 lg:w-[80%] lg:mx-auto">
         <h1 className="font-raleway font-bold xs:text-6xl sm:text-6xl text-neutral text-pretty">
           Ignite Your Legal Success

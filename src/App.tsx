@@ -1,4 +1,4 @@
-import { 
+import {
   Navbar,
   Hero,
   AboutUs,
@@ -7,12 +7,10 @@ import {
   MayaMaceyFoundation,
   Contact,
   Footer,
-  News
+  News,
 } from "./components";
 
-
 function App() {
-
   return (
     <>
       <Navbar />
@@ -24,10 +22,10 @@ function App() {
         <MayaMaceyFoundation />
         <News />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
