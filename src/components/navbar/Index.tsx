@@ -108,11 +108,7 @@ const Index = () => {
         </div>
       </nav>
       <nav
-        className={`${
-          isActive && windowWidth < 768
-            ? "opacity-100"
-            : "opacity-0 pointer-events-none invisible"
-        } ${
+        className={`${isActive && windowWidth < 768 ? "" : "hidden"} ${
           windowWidth > 768 && "hidden"
         } w-full flex justify-center transition-all`}
       >

@@ -233,7 +233,7 @@ const Index: React.FC = () => {
             onSubmit={sendMessage}
             className="flex flex-col items-center gap-6 w-full"
           >
-            <div className="grid gap-6 sm:grid-cols-6 w-full">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-6 w-full">
               <div className="relative z-0 mb-4 col-span-3">
                 <input
                   type="text"
