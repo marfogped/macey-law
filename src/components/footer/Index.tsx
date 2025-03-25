@@ -1,5 +1,5 @@
 import React from "react";
-import { MaceyFullWhite } from "../../utils/images";
+import { MaceyFullWhite, ViolaCreative } from "../../utils/images";
 import { NAV_ITEMS, FOOTER_LINKS } from "../../utils/constants";
 import { ScrollTo } from "..";
 
@@ -14,10 +14,10 @@ const Index: React.FC = () => {
         />
       </div>
 
-      <div className="bg-[#1C3C7B] md:py-4">
+      <div className="bg-[#1C3C7B] md:py-4 flex flex-col items-center">
         <div className="h-max flex xs:flex-col sm:flex-col xl:flex-row md:w-[90%] xxl:w-[80%] mx-auto items-center justify-between md:gap-4 ">
           <div className="text-neutral xs:w-full sm:w-max text-center xs:order-3 sm:order-3 xl:order-1 xs:py-2 sm:py-2 md:py-0 xs:bg-[rgb(24,25,26)] md:bg-none">
-            © 2024 All Rights Reserved.
+            © {new Date().getFullYear()} All Rights Reserved.
           </div>
 
           <ul className="xs:w-full sm:w-max flex xs:flex-col sm:flex-col md:flex-row gap-4 xs:order-1 sm:order-1 xl:order-2 xs:py-2 sm:py-2 md:py-0">
@@ -42,6 +42,19 @@ const Index: React.FC = () => {
             ))}
           </ul>
         </div>
+        <a
+          href="https://www.violacreative.com/"
+          className="flex items-center gap-1 mt-5"
+        >
+          <span className="text-[12px] text-gray-300">Developed by</span>
+          <img
+            src={ViolaCreative}
+            alt="Viola Creative Logo"
+            height={15}
+            width={100}
+            loading="lazy"
+          />
+        </a>
       </div>
     </footer>
   );
